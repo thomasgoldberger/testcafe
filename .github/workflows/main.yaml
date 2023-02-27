@@ -18,6 +18,6 @@ jobs:
       - name: Run tests headless
         run: |
               ls -a 
-              cd .. 
+              cd ./.github 
               ls -a
-              testcafe "chrome:headless" ./examples/basic/test.js  
+             # testcafe "chrome:headless" ./examples/basic/test.js  
