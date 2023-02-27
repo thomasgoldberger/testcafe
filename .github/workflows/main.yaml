@@ -11,13 +11,17 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          repository: thomasgoldberger/testcafe
+          path: main
 
       - name: Install testcafe dependencies
         run: npm install -g testcafe
+        working-directory: main
+
 
       - name: Run tests headless
-        run: |
-              ls -a 
-              cd ./.github 
-              ls -a
-             # testcafe "chrome:headless" ./examples/basic/test.js  
+        run: testcafe "chrome:headless" ./examples/basic/test.js  
+        working-directory: main
