@@ -17,4 +17,6 @@ jobs:
         run: npm install -g testcafe
 
       - name: Run tests headless
-        run: testcafe "chrome:headless" ./examples/basic/test.js  
+        run: |
+              ls -a 
+              testcafe "chrome:headless" ./examples/basic/test.js  
