@@ -2,8 +2,8 @@ name: testcafe-test
 
 on: 
   workflow_dispatch:
-    
   workflow_call:
+  push: 
 
 jobs:  
   test_e2e_testcafe:
