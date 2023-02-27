@@ -1,0 +1,16 @@
+name: testcafe-test
+on: [push]
+
+jobs:  
+  test_e2e_testcafe:
+    name: Run end-to-end test with test_e2e_testcafe
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+
+      - name: Install testcafe dependencies
+        run: npm install -g testcafe
+
+      - name: Run tests headless
+        run: testcafe "chrome:headless" ./examples/basic/test.js  
